@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import User from "../models/userModel.js";
 import validator from "validator";
-import bcrypt from "bcrypt.js";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken"; 
 
 const TOKEN_EXPIRES_IN = '24h';
@@ -112,4 +112,4 @@ export async function login(req, res) {
             message: 'Server error.'
         });
         
-    }
+    }}
