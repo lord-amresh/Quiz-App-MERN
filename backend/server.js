@@ -17,6 +17,7 @@ connectDB();
 
 // Routes 
 app.use('/api/auth', userRouter);
+app.use('/api/results', resultRouter);
 
 
 app.get('/', (req, res) => {
