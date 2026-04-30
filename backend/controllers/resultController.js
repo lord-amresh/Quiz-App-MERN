@@ -55,7 +55,7 @@ export async function createResult(req, res) {
     }
 }
 
-// List the results (Renamed from getResults to listResults to fix your error)
+// List the results for the logged-in user
 export async function listResults(req, res) {
     try {
         if (!req.user || !req.user._id) {
@@ -84,6 +84,39 @@ export async function listResults(req, res) {
         return res.status(500).json({
             success: false,
             message: 'Server error'
+        });
+    }
+}
+
+// Get top scores across all users for the Leaderboard
+export async function getLeaderboard(req, res) {
+    try {
+        const { technology } = req.query;
+        const query = {};
+        
+        // Filter by technology if it's not "all"
+        if (technology && technology.toLowerCase() !== "all") {
+            query.technology = technology.toLowerCase();
+        }
+
+        // 1. Sort by score (highest first)
+        // 2. Populate 'user' to get the student's name
+        // 3. Limit to top 10 for a clean UI
+        const topScores = await Result.find(query)
+            .populate('user', 'name') 
+            .sort({ score: -1, createdAt: 1 })
+            .limit(10)
+            .lean();
+
+        return res.json({
+            success: true,
+            leaderboard: topScores
+        });
+    } catch (err) {
+        console.error("getLeaderboard Error:", err);
+        return res.status(500).json({
+            success: false,
+            message: "Server error fetching leaderboard"
         });
     }
 }
