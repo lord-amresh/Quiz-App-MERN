@@ -15,7 +15,7 @@ const Login = ({onLoginSuccess = null}) => {
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const API_BASE = 'http://localhost:4000';
+  const API_BASE = 'https://quiz-app-9vdj.onrender.com';
 
   const validate = () => {
     const e = {};

@@ -9,7 +9,7 @@ import {
   Trophy, X, Zap, Menu, CheckCircle, XCircle, RefreshCw
 } from "lucide-react";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = "https://quiz-app-9vdj.onrender.com";
 
 const Sidebar = () => {
   const [selectedTech, setSelectedTech] = useState(null);
@@ -267,6 +267,60 @@ const Sidebar = () => {
           <div className={sidebarStyles.sidebarFooter}>
             <div className={sidebarStyles.footerContent}>
               <div className={sidebarStyles.footerContentCenter}>
+                  <div className={sidebarStyles.welcomePrompt} style={{ 
+                padding: '16px', 
+                backgroundColor: '#ffffff', 
+                borderTop: '1px solid #f0f0f0', 
+                textAlign: 'left',
+                fontFamily: 'sans-serif'
+              }}>
+                {/* Line 1: Credits */}
+                <p style={{ 
+                  color: '#1a1a1a', 
+                  fontSize: '12px', 
+                  fontWeight: '600', 
+                  margin: '0 0 12px 0' 
+                }}>
+                  Made by: Amresh Chaurasia
+                </p>
+                
+
+
+                {/* Line 3: Portfolio CTA */}
+                <p style={{ margin: '0', fontSize: '12px', color: '#666' }}>
+                  Check my portfolio: {' '}
+                  <a 
+                    href="http://portfolio.amresh.com.np/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    style={{ 
+                      color: '#007bff', 
+                      textDecoration: 'none', 
+                      fontWeight: '600' 
+                    }}
+                  >
+                    Click here
+                  </a>
+                                  {/* Line 2: Social Links */}
+                <div style={{ display: 'flex', gap: '20px', alignItems: "center",marginTop:'12px' }}>
+                  <a href="https://github.com/lord-amresh" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <img 
+                      src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+                      alt="GitHub" 
+                      style={{ width: '18px', height: '18px', display: 'block' }} 
+                    />
+                  </a>
+                  <a href="https://www.linkedin.com/in/amresh-chaurasia-09a05b261" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <img 
+                      src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+                      alt="LinkedIn" 
+                      style={{ width: '18px', height: '18px', display: 'block' }} 
+                    />
+                  </a>
+                </div>
+                </p>
+                
+              </div>
                 <p>Master your skills one quiz at a time</p>
                 <p className={sidebarStyles.footerHighlight}>Keep learning, keep Growing!</p>
               </div>
@@ -324,6 +378,7 @@ const Sidebar = () => {
                     <h3 className={sidebarStyles.featureTitle}>Instant Feedback</h3>
                     <p className={sidebarStyles.featureDescription}>Get detailed results and performance analysis</p>
                   </div>
+                  
                 </div>
                 <div className={sidebarStyles.welcomePrompt}>
                   <p className={sidebarStyles.welcomePromptText}><Sparkles size={16} className="mr-2" />Select any technology to begin your learning adventure!</p>
