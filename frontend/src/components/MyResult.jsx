@@ -283,13 +283,45 @@ function StripCard({ item }) {
           <div className={resultStyles.cardInfo}>
             <div className={`${resultStyles.levelAvatar} ${level.style}`}>
               {level.letter}
-
             </div>
+
+            <div className={resultStyles.cardText}>
+              <h3 className={resultStyles.cardTitle}>{item.title}</h3>
+
+              <div className={resultStyles.cardMeta}>
+                {item.totalQuestions} Qs
+                {item.timeSpent ? `.${item.timeSpent}` : ""}
+              </div>
+            </div>
+          </div>
+
+          <div className={resultStyles.cardPerformance}>
+            <div className={resultStyles.performanceLabel}>Perforomance</div>
+            <div className={resultStyles.badgeContainer}>
+              <Badge percent={percent} />
+            </div>
+          </div>
+        </div>
+
+        <div className={resultStyles.cardStats}>
+          <div className={resultStyles.statItem}>
+            Correct:
+          <span className={resultStyles.statNumber}>{item.correct}</span>
+          </div>
+
+            <div className={resultStyles.statItem}>
+            Wrong:
+          <span className={resultStyles.statNumber}>{item.wrong}</span>
+          </div>
+
+            <div className={resultStyles.statItem}>
+            Score:
+          <span className={resultStyles.statNumber}>{percent}%</span>
           </div>
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
 export default MyResult
