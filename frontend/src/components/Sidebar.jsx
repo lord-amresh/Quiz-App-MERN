@@ -360,7 +360,7 @@ const Sidebar = () => {
             <div className={sidebarStyles.welcomeContainer}>
               <div className={sidebarStyles.welcomeContent}>
                 <div className={sidebarStyles.welcomeIcon}><Award size={64} className="text-indigo-700" /></div>
-                <h2 className={sidebarStyles.welcomeTitle}>Welcome to Tech Quiz Master</h2>
+                <h2 className={sidebarStyles.welcomeTitle}>Welcome to StudyNP Quiz Application</h2>
                 <p className={sidebarStyles.welcomeDescription}>Select a technology from the sidebar to start your quiz journey. Test your knowledge at basic, intermediate, or advanced levels.</p>
                 <div className={sidebarStyles.featuresGrid}>
                   <div className={sidebarStyles.featureCard}>
